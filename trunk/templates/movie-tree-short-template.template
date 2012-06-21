@@ -1,0 +1,3 @@
+<script type="text/html" id="movie-tree-short-template">
+	<a href="#" data-bind="text: general.title, click: $root.selectMovie"></a><br>
+</script>
