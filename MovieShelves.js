@@ -2,7 +2,7 @@
 //Created by Hugo Baizan
 //06/20/2012
 
-var MovieShelves = function() {
+var MovieShelves = function(mockup) {
 	var self = this;
 	
 	//Data
@@ -15,7 +15,15 @@ var MovieShelves = function() {
 	self.selectMovie = function(thisMovie) {
 		self.selectedMovie(thisMovie);
 	}
+
+	if(mockup) {
+		for(var index=1; index<20; index++) {
+			var movie = new Movie();
+			movie.mockup(index);
+			self.movies.push(movie);
+		}
+	}
 }
 
-var myCollection = new MovieShelves();
+var myCollection = new MovieShelves(true);
 ko.applyBindings(myCollection);

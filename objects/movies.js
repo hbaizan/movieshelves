@@ -13,6 +13,13 @@ function Movie() {
 	this.images = new MovieImages();
 	this.editions = new MovieEditions();
 	this.seasons = new MovieSeasons();
+
+	this.mockup = function(id) {
+		this.id = id;
+		this.general.mockup(id);
+		this.actors.mockup(id);
+		this.description.mockup();
+	};
 }
 
 function MovieGeneral() {
@@ -25,12 +32,25 @@ function MovieGeneral() {
 	this.seen = false;
 	this.wanted = false;
 	this.sale = false;
+	this.gender = "";
+
+	this.mockup = function(id) {
+		this.title = "Movie " + id;
+		this.gender = "Action";
+		this.year = 1919;
+		this.originalTitle = "Pelicula " + id;
+		this.duration = 120;
+	}
 }
 
 function MovieDescription() {
 	this.summary = "";
 	this.benefits = "";
 	this.awards = "";
+
+	this.mockup = function() {
+		this.summary = "Lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum";
+	}
 }
 
 function MovieOthers() {
