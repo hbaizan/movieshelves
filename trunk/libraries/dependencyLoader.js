@@ -13,7 +13,9 @@ Pyramid.newDependency({
     name: 'standard',
     files: [
     'libraries/jquery-1.7.2.min.js',
-	 'libraries/knockout-2.1.0.js'
+	 'libraries/knockout-2.1.0.js',
+	 'libraries/bootstrap/js/bootstrap.js',
+	 'libraries/bootstrap/js/bootstrap-tab.js'
     ]
 });
 

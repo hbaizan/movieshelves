@@ -30,7 +30,7 @@
 	<body>
 		<div class="container-fluid">
 			<div class="span3">
-				<ul class="nav nav-tabs">
+				<ul class="nav nav-tabs" id="leftTab">
 					<li class="active"><a href="#movies" data-toggle="tab">Movies</a></li>
 					<li><a href="#actors" data-toggle="tab">Actors</a></li>
 				</ul>
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 			<div class="span9">
-				<ul class="nav nav-tabs">
+				<ul class="nav nav-tabs" id="mainTab">
 					<li class="active"><a href="#main" data-toggle="tab">Main</a></li>
 					<li><a href="#add" data-toggle="tab">+</a></li>
 				</ul>
@@ -81,6 +81,9 @@
 							</div>
 						</div>
 					</div>
+					<div class="tab-pane" id="add">
+						Add a new movie here!
+					</div>
 				</div>
 			</div>
 		</div>
@@ -94,4 +97,12 @@
 </script>
 <script>
 	Pyramid.load('main');
+	$('#leftTab a').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	});
+	$('#mainTab a').click(function (e) {
+	  e.preventDefault();
+	  $(this).tab('show');
+	});
 </script>
