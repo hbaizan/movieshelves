@@ -50,14 +50,34 @@
 				<div class="tab-content">
 					<div class="tab-pane active" id="main" data-bind="with: selectedMovie">
 						<div class="row">
-							<div class="span8">
+							<div class="span4">
 								<h4 data-bind="text: general.title"></h4>
 								<h4 data-bind="text: general.originalTitle"></h4>
+							</div>
+							<div class="span4">
+								<button>save</button>
+							</div>
+						</div>
+						<div class="row">
+							<div class="span4">
+								My Rate:
+								<label data-bind="text: general.myRate"></label>
+							</div>
+							<div class="span4">
+								Gender
+								<label data-bind="text: general.gender"></label>
+								Year
+								<label data-bind="text: general.year"></label>
 							</div>
 						</div>
 						<div class="row">
 							<div class="span8">
-								<h4 data-bind="text: general.title"></h4>
+								<div data-bind="template: {name: 'actor-link-short-template', foreach: actors}"></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="span8">
+								<span data-bind="text: description.summary"></span>
 							</div>
 						</div>
 					</div>
@@ -66,6 +86,12 @@
 		</div>
 	</body>
 </html>
+<script type="text/html" id="movie-tree-short-template">
+	<a href="#" data-bind="text: general.title, click: $root.selectMovie"></a><br>
+</script>
+<script type="text/html" id="actor-link-short-template">
+	<a href="#" data-bind="text: fullName()"></a> (<span data-bind="text: character"></span>)<br>
+</script>
 <script>
 	Pyramid.load('main');
 </script>

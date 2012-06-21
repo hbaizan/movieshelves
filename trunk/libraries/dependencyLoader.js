@@ -2,10 +2,10 @@
 Pyramid.rootPath = './';
 
 //note that no template was defined?  This means that the code will be inserted directly into the page
-Pyramid.setTypeRenderer(
+/*Pyramid.setTypeRenderer(
 { name: 'template',
-	isExtension: true,
-});
+	isExtension: true
+});*/
 
 
 //Set up file dependencies
@@ -24,18 +24,18 @@ files: [
     ]
 });
 
-Pyramid.newDependency({
+/*Pyramid.newDependency({
 name:'templates',
 files: [
 	'templates/movie-tree-short-template.template'
 	]
-});
+});*/
 Pyramid.newDependency({
 name:'main',
 files: [
-	'MovieShelves.js',
 	'objects/movies.js',
-	'Mockups.js'
-    ],
-    dependencies: ['standard','lookAndFeel','templates']
+	'objects/actors.js',	
+	'MovieShelves.js'
+   ],
+    dependencies: ['standard','lookAndFeel']
 });
