@@ -3,6 +3,7 @@
 //06/20/2012
 
 function Movie() {
+	console.log("creating movie...");
 	this.id = 0;
 	this.general = new MovieGeneral();
 	this.description = new MovieDescription();
